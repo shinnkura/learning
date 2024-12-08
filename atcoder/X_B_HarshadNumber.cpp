@@ -8,14 +8,15 @@ int main() {
     cin >> N;
 
     int fx = 0;
-    while (N){
-        fx += N % 10;
-        N /= 10;
+    int x = N;
+    while (x){
+        fx += x % 10;
+        x /= 10;
     }
 
     if (fx == 0) {
         cout << "No" << endl;
-    } else if(fx % N == 0) {
+    } else if(N % fx == 0) {
         cout << "Yes" << endl;
     } else {
         cout << "No" << endl;
