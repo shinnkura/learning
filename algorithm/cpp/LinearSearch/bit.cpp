@@ -12,7 +12,7 @@ int main() {
     // 線形探索
     // bit は２^N 通りの部分集合全体を動く
     bool exist = false;
-    for (int bit = 0; bit < (i << N); ++bit) {
+    for (int bit = 0; bit < (1 << N); ++bit) {
         int sum = 0; // 部分集合の和
         for (int i = 0; i < N; ++i) {
             // i番目の要素 a[i] が部分集合に含まれているかどうか
