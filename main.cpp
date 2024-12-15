@@ -22,18 +22,18 @@ int main() {
     int D = 4;
     int E = 5;
 
-    /*vector<int> ans;*/
-    /*for (string str :vec) {*/
-    /*    int sum = 0;*/
-    /*    for (char c : str) {*/
-    /*        if (c == 'A') sum += A;*/
-    /*        if (c == 'B') sum += B;*/
-    /*        if (c == 'C') sum += C;*/
-    /*        if (c == 'D') sum += D;*/
-    /*        if (c == 'E') sum += E;*/
-    /*    }*/
-    /*    ans.push_back(sum);*/
-    /*}*/
+    vector<int> ans;
+    for (string str :vec) {
+        int sum = 0;
+        for (char c : str) {
+            if (c == 'A') sum += A;
+            if (c == 'B') sum += B;
+            if (c == 'C') sum += C;
+            if (c == 'D') sum += D;
+            if (c == 'E') sum += E;
+        }
+        ans.push_back(sum);
+    }
 
 
     /*for (string& str : vec) {*/
