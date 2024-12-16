@@ -1,5 +1,7 @@
 // STL：あらかじめ用意された標準ライブラリ
 #include <iostream>
+#include <vector>
+#include <algorithm> // sort, reverse
 using namespace std;
 
 // min関数
