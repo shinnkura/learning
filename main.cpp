@@ -6,13 +6,13 @@ using namespace std;
 int main() {
     vector<string> vec = {
         "ABCDE", "BCDE", "ACDE", "ABDE", "ABCE", "ABCD",
-        "CDE", "BDE", "ADE", "BCE", "ACE", "BCD", 
-        "ABE", "ACD", "ABD", "ABC", 
-        "DE", "CE", "BE", "CD", "AE", "BD", "AD", "BC", "AC", "AB", 
+        "CDE", "BDE", "ADE", "BCE", "ACE", "BCD",
+        "ABE", "ACD", "ABD", "ABC",
+        "DE", "CE", "BE", "CD", "AE", "BD", "AD", "BC", "AC", "AB",
         "E", "D", "C", "B", "A"
     };
 
-    /*for (const string& str : vec) {*/
+    /*for (const string& str : vec) {*/ 
     /*    cout << str << endl;*/
     /*}*/
 
