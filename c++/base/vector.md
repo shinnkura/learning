@@ -4,6 +4,7 @@ g++ -std=c++11 main.cpp -o main
 ```
 
 // vector<型> 変数名(要素数, 初期値);
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -20,7 +21,6 @@ int main() {
     cout << data.at(0) << endl;// 1
     cout << data.size() << endl;// 5
 }
-
 
 // 複数の変数を一度にに宣言する
 int main() {
@@ -60,3 +60,4 @@ int main() {
         cout << vec.at(i) << " ";
     } // 1 2
 }
+```
