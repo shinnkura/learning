@@ -1,3 +1,8 @@
+vectorを使用した場合、以下のコマンドをすることで実行できる
+```shell
+g++ -std=c++11 main.cpp -o main
+```
+
 // vector<型> 変数名(要素数, 初期値);
 #include <iostream>
 #include <vector>
