@@ -1,9 +1,11 @@
-vectorを使用した場合、以下のコマンドをすることで実行できる
+## シェルコマンド
 ```shell
 g++ -std=c++11 main.cpp -o main && ./main
 ```
 
-// vector<型> 変数名(要素数, 初期値);
+## 基本
+`vector<型> 変数名(要素数, 初期値);`
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -59,5 +61,62 @@ int main() {
     for (int i = 0; i < vec.size(); i++) {
         cout << vec.at(i) << " ";
     } // 1 2
+}
+```
+
+## assignメソッド
+- vectorの初期化を行なってくれる
+- 主に使い方は２つある
+  - サイズと値を初期化する
+  - 範囲から初期化する
+
+- サイズと値を初期化する
+```cpp
+int main() {
+    vector<int> vec;
+
+    // サイズ 5、すべての値を10で初期化
+    vec.assign(5, 10);
+
+    // 出力
+    for (int v : vec) {
+        cout << v << " "; // 出力: 10 10 10 10 10
+    }
+    return 0;
+}
+```
+
+- 範囲から初期化する
+```cpp
+int main(){
+    vector<int> source = {1, 2, 3, 4, 5};
+    vector<int> dest;
+
+    // source の範囲 [begin, end) を dest にコピー
+    dest.assign(source.begin() + 1, source.end() - 1); // インデックス１番目から３番目まで
+
+    // 出力
+    for (int v : dest) {
+        cout << v << " "; // 出力: 2 3 4
+    }
+    return 0;
+}
+
+```
+
+- 例）フィボナッチ数列のメモ初期化
+
+```cpp
+int main() {
+    vector<long long > memo;
+
+    // サイズ10 すべての要素を-1に初期化する
+    memo.assign(10, -1);
+
+    // 出力
+    for (long long v : memo) {
+        cout << v << " "; // 出力: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+    }
+    return 0;
 }
 ```
