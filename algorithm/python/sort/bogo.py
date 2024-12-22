@@ -3,7 +3,8 @@ from typing import List
 
 
 def in_order(numbers: List[int]) -> bool:
-    return all(numbers[i] <= numbers[i+1] for i in range(len(numbers)-1))
+    return all(numbers[i] <= numbers[i+1] for i in range(len(numbers)-1)) # allメソッドは、引数が全てTrueの場合にTrueを返す
+    # 上記の1行と以下の4行は同じ意味
     # for i in range(len(numbers)-1):
     #     if numbers[i] > numbers[i+1]:
     #         return False

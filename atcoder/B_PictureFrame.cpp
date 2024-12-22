@@ -7,7 +7,6 @@ int main() {
     int H, W;
     cin >> H >> W;
 
-<<<<<<< HEAD
    for (int i = 0; i < W + 2; i++) {
        cout << "#";
    }
