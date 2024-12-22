@@ -13,6 +13,7 @@ int main() {
 
   // ここにプログラムを追記
   // (ここで"試合結果の表"の2次元配列を宣言)
+  // vector<縦の要素数, vector<横の要素数, 初期値>>
   vector<vector<char> > result(N, vector<char>(N, '-'));
   for (int i = 0; i < M; i++) {
     result.at(A.at(i) - 1).at(B.at(i) - 1) = 'o';
@@ -21,8 +22,8 @@ int main() {
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
       cout << result.at(i).at(j);
-      if (j == N - 1) cout << endl;
-      else cout << " ";
+      if (j == N - 1) cout << endl; // 末尾なら改行
+      else cout << " "; // 末尾でないならスペース
     }
   }
 }
