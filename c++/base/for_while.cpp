@@ -1,7 +1,6 @@
 // forとwhileの違い
 // １：カウンタ変数のスコープ
-// 下記の場合、変数iはfor文の中でしか使えない
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -23,7 +22,7 @@ int main() {
 
 
 // ２：continueをした時の動作
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
