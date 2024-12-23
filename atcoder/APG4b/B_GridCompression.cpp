@@ -14,6 +14,7 @@ int main() {
     }
 
     vector< vector<char> > B;
+    // 横一列「.」のみの行を削除
     for (int i = 0; i < H; i++) {
         bool is_all_dot = true;
         for (int j = 0; j < W; j++) {
@@ -26,7 +27,8 @@ int main() {
         }
     }
 
-    vector<bool> col_has_sharp(W, false);
+    // 縦一列「.」のみの列を削除
+    vector<bool> col_has_sharp(W, false); // Bを{false, false, false, ....}こんな感じの配列に変換
     for (int j = 0; j < W; j++) {
         for (int i = 0; i < B.size(); i++) {
             if (B.at(i).at(j) == '#') {
@@ -40,8 +42,8 @@ int main() {
     for (int i = 0; i < B.size(); i++) {
         vector<char> row;
         for (int j = 0; j < W; j++) {
-            if (col_has_sharp.at(j)) {
-                row.push_back(B.at(i).at(j));
+            if (col_has_sharp.at(j)) { // trueの時（#がある時）
+                row.push_back(B.at(i).at(j)); // その行の#のみをrowに追加
             }
         }
         C.push_back(row);
@@ -62,3 +64,40 @@ int main() {
 // https://blog.hamayanhamayan.com/entry/2018/08/26/001618
 
 
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main() {
+	int h;
+	cin >> h;
+	int w;
+	cin >> w;
+	vector<string> a(h);
+	for (int i = 0; i < h; i++) {
+		cin >> a[i];
+	}
+
+	vector<bool> row(h, false);
+	vector<bool> col(w, false);
+	for (int i = 0; i < h; i++) {
+		for (int j = 0; j < w; j++) {
+			if (a[i][j] == '#') {
+				row[i] = true;
+				col[j] = true;
+			}
+		}
+	}
+
+	for (int i = 0; i < h; i++) {
+		if (row[i]) {
+			for (int j = 0; j < w; j++) {
+				if (col[j]) {
+					cout << a[i][j];
+				}
+			}
+			cout << endl;
+		}
+	}
+}
