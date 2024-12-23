@@ -26,7 +26,6 @@ int main() {
         }
     }
 
-    vector< vector<char> > C;
     vector<bool> col_has_sharp(W, false);
     for (int j = 0; j < W; j++) {
         for (int i = 0; i < B.size(); i++) {
@@ -37,6 +36,7 @@ int main() {
         }
     }
 
+    vector< vector<char> > C;
     for (int i = 0; i < B.size(); i++) {
         vector<char> row;
         for (int j = 0; j < W; j++) {
