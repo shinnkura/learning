@@ -70,17 +70,16 @@ int main() {
 using namespace std;
 
 int main() {
-	int h;
-	cin >> h;
-	int w;
-	cin >> w;
+	int h, w;
+	cin >> h >> w;
 	vector<string> a(h);
 	for (int i = 0; i < h; i++) {
-		cin >> a[i];
+		cin >> a.at(i);
 	}
 
 	vector<bool> row(h, false);
 	vector<bool> col(w, false);
+    // 行と列に#があるかどうかをboolで表す
 	for (int i = 0; i < h; i++) {
 		for (int j = 0; j < w; j++) {
 			if (a[i][j] == '#') {
@@ -91,9 +90,9 @@ int main() {
 	}
 
 	for (int i = 0; i < h; i++) {
-		if (row[i]) {
+		if (row[i]) { // trueの時（#がある時）
 			for (int j = 0; j < w; j++) {
-				if (col[j]) {
+				if (col[j]) { // trueの時（#がある時）
 					cout << a[i][j];
 				}
 			}
