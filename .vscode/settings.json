@@ -3,6 +3,8 @@
     "*.embeddedhtml": "html",
     ".env*": "dotenv",
     "*.module": "php",
-    "vector": "cpp"
+    "vector": "cpp",
+    "string": "cpp",
+    "ostream": "cpp"
   }
 }
