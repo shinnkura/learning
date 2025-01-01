@@ -1,1 +1,0 @@
-// https://atcoder.jp/contests/arc029/tasks/arc029_1
