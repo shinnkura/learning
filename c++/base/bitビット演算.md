@@ -93,3 +93,83 @@ int main() {
 
 
 
+## ビット全探索
+- 雛形
+```cpp
+for (int tmp = 0; tmp < (1 << ビット数); tmp++) {
+  bitset<ビット数> s(tmp);
+  // (ビット列sに対する処理)
+}
+```
+
+
+- すべての「長さ3のビット列」を列挙
+```cpp
+for (int tmp = 0; tmp < (1 << 3); tmp++) {
+  bitset<3> s(tmp);
+  cout << s << endl;
+}
+
+// 出力
+// 000
+// 001
+// 010
+// 011
+// 100
+// 101
+// 110
+// 111
+```
+
+■ 問題
+A1,A2,⋯ANのN個の整数が与えられます。 これらの整数からいくつかを選んで、その総和がKとなるような選び方が存在するかを求めてください。
+制約
+1≤N≤20
+1≤K≤100
+1≤Ai≤100(1≤i≤N)
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main () {
+  int N, K;
+  cin >> N >> K;
+  vector<int> A(N);
+  for (int i = 0; i < N; i++) {
+    cin >> A.at(i);
+  }
+
+  bool ans = false;
+
+  // すべての選び方を試して、総和がKになるものがあるかを調べる
+  for (int tmp = 0; tmp < (1 << 20); tmp++) {
+    bitset<20> s(tmp);  // 最大20個なので20ビットのビット列として扱う
+
+    // ビット列の1のビットに対応する整数を選んだとみなして総和を求める
+    int sum = 0;
+    for (int i = 0; i < N; i++) {
+      if (s.test(i)) {
+        sum += A.at(i);
+      }
+    }
+    if (sum == K) {
+      ans = true;
+    }
+  }
+
+  if (ans) {
+    cout << "YES" << endl;
+  } else {
+    cout << "NO" << endl;
+  }
+}
+
+```
+
+
+
+
+
+
+
