@@ -5,6 +5,7 @@
     "*.module": "php",
     "vector": "cpp",
     "string": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "stack": "cpp"
   }
 }
