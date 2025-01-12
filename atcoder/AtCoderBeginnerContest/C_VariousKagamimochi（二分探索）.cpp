@@ -27,3 +27,25 @@ int main() {
 
     return 0;
 }
+
+
+// 回答例
+#include <iostream>
+using namespace std;
+#define rep(i, n) for (int i = 0; i < (n); i++)
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> A(n);
+    rep(i, n) cin >> A[i];
+
+    ll ans = 0;
+    rep(b, n) {
+        int r = upper_bound(A.begin(), A.begin()+b, A[b]/2) - A.begin();
+        ans += r;
+    }
+
+    cout << ans << endl;
+    return 0;
+}
