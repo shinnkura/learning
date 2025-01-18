@@ -14,3 +14,9 @@ oj t -c "bash -c 'g++ main.cpp -o main && ./main'" -d tests
 ```shell
 acc s
 ```
+
+## 問題の追加
+```shell
+cd abc250
+acc a
+```
