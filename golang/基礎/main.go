@@ -6,6 +6,16 @@ import (
 	"time"
 )
 
+// カウンターを生成する関数
+func makeCounter() func() int {
+	count := 0 // 外部の変数
+
+	return func() int {
+		count++ // 外部変数にアクセスして変更
+		return count
+	}
+}
+
 func main() {
 	fmt.Println("Hello, World!")
 	fmt.Println(time.Now())
@@ -89,6 +99,40 @@ func main() {
 	h2 := string(b)
 	fmt.Println(h2) // hello world
 
+	///////////////////////////////////////////////////////////
+	// 関数
+	///////////////////////////////////////////////////////////
+	f := func(x, y int) int {
+		return x + y
+	}
+	fmt.Println(f(1, 2)) // 3
+
+	// 即時関数
+	instant_func := func(x, y int) int {
+		return x + y
+	}(1, 2)
+	fmt.Println(instant_func) // 3
+
+	func() {
+		fmt.Println("即時関数")
+	}()
+
+	// クロージャ
+	// 関数が外部の変数を保持して操作する
+	// 状態の管理や条件付きロジックのカプセル化するのに役立つ
+
+	// 以下はクロージャーを利用したジェネレーターの実装例
+	// ジェネレーターは、何らかのルールに従って連続した値を返し続ける仕組み
+	// カウンターを作成
+	counter := makeCounter()
+
+	fmt.Println(counter()) // 1
+	fmt.Println(counter()) // 2
+	fmt.Println(counter()) // 3
+
+	// 新しいカウンターを作成
+	anotherCounter := makeCounter()
+	fmt.Println(anotherCounter()) // 1 (新しいクロージャーのスコープ)
 }
 
 // コンパイル
