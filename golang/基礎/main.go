@@ -133,6 +133,27 @@ func main() {
 	// 新しいカウンターを作成
 	anotherCounter := makeCounter()
 	fmt.Println(anotherCounter()) // 1 (新しいクロージャーのスコープ)
+
+	///////////////////////////////////////////////////////////
+	// for文
+	///////////////////////////////////////////////////////////
+	// 範囲for文
+	// for index, value := range collection {
+	// 	// 処理
+	// }
+	// 配列・スライス・マップで使用することができる
+	arr_for := [3]int{1, 2, 3}
+	for i, v := range arr_for { // 第一引数はインデックス、第二引数は値
+		fmt.Println(i, v)
+	}
+	sl_for := []string{"a", "b", "c"}
+	for i, v := range sl_for {
+		fmt.Println(i, v)
+	}
+	map_for := map[string]int{"a": 1, "b": 2, "c": 3}
+	for k, v := range map_for { // 第一引数はキー、第二引数は値
+		fmt.Println(k, v)
+	}
 }
 
 // コンパイル
