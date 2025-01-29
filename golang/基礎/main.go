@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"time"
 )
 
@@ -28,35 +29,66 @@ func main() {
 	///////////////////////////////////////////////////////////
 	// byte(uint8)型
 	byteA := []byte{72, 73}
-	fmt.Println(byteA) // [72 73]
+	fmt.Println(byteA)         // [72 73]
 	fmt.Println(string(byteA)) // HI （文字列はアスキーコードとして出力される）
 
 	sbyteA := []byte("HI")
-	fmt.Println(sbyteA) // [72 73]
+	fmt.Println(sbyteA)         // [72 73]
 	fmt.Println(string(sbyteA)) // HI
-
 
 	// 配列とスライス
 	// 配列はあとから要素数を変更することができない
 	// 後から要素数を変更する場合はスライスを使用する
-	
+
 	// 配列
 	// 型名 := [要素数]型{値1, 値2, ...}
 	arr := [3]int{1, 2, 3}
-	fmt.Println(arr) // [1 2 3]
+	fmt.Println(arr)        // [1 2 3]
 	fmt.Printf("%T\n", arr) // [3]int
 
 	//　要素数を指定しないで配列を定義することもできる
 	// 型名 := [...]型{値1, 値2, ...}
 	arr2 := [...]int{1, 2}
-	fmt.Println(arr2) // [1 2]
+	fmt.Println(arr2)        // [1 2]
 	fmt.Printf("%T\n", arr2) // [2]int
-
 
 	// スライス
 	// 型名 := []型{値1, 値2, ...}
 	sl := []int{1, 2, 3}
 	fmt.Println(sl) // [1 2 3]
+
+	// interface{}型
+	// あらゆる型を代入できる
+	var x interface{}
+	fmt.Println(x) // <nil>
+	x = "test"
+	fmt.Println(x) // test
+	x = 1
+	fmt.Println(x) // 1
+	// 演算はできない
+	// x + 1 // エラー
+
+	// 型変換
+	// 文字列を数値に変換
+	i, err := strconv.Atoi("100")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(i) // 100
+
+	// 数値を文字列に変換
+	s := strconv.Itoa(100)
+	fmt.Println(s) // 100
+
+	// 文字列をバイト配列に変換
+	var h string = "hello world"
+	b := []byte(h)
+	fmt.Println(b) // [104 101 108 108 111 32 119 111 114 108 100]
+
+	// バイト配列を文字列に変換
+	h2 := string(b)
+	fmt.Println(h2) // hello world
+
 }
 
 // コンパイル
