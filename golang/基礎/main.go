@@ -166,6 +166,29 @@ func main() {
 	for k, v := range map_for { // 第一引数はキー、第二引数は値
 		fmt.Println(k, v)
 	}
+
+	// ラベル付きFor
+Loop:
+	for i := 0; i < 3; i++ {
+		for j := 0; j < 3; j++ {
+			if j > 1 {
+				break Loop
+			}
+			fmt.Println(i, j)
+		}
+	}
+
+	// continueを使うことで、for文の処理をスキップすることができる
+Loop2:
+	for i := 0; i < 3; i++ {
+		for j := 0; j < 3; j++ {
+			if j > 1 {
+				continue Loop2
+			}
+			fmt.Println(i, j)
+		}
+		fmt.Println("jが1より大きい場合はこの処理が走る")
+	}
 }
 
 // コンパイル
