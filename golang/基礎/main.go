@@ -99,6 +99,18 @@ func main() {
 	h2 := string(b)
 	fmt.Println(h2) // hello world
 
+	// 型変換
+	// 型アサーション
+	// var 変数 interface{} = 値
+	// 値, ブール値 := 変数.(型)
+	var i6 interface{} = 1
+	s, ok := i6.(string)
+	fmt.Println(s, ok) // 1 true
+
+	var s6 interface{} = "14"
+	i, ok = s6.(int)
+	fmt.Println(i, ok) // 14 false
+
 	///////////////////////////////////////////////////////////
 	// 関数
 	///////////////////////////////////////////////////////////
