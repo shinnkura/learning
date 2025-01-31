@@ -26,7 +26,7 @@ type ToStringer interface {
 	ToString() string
 }
 
-func main() {
+func RunExample() {
 	sliceByInterface := []ToStringer{
 		&Person{Name: "Taro", Age: 20},
 		&Car{Model: "Toyota", Year: 2020},
