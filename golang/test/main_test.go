@@ -16,7 +16,6 @@ func TestIsOne(t *testing.T) {
 	}
 }
 
-
 // テストを実行する
 // go test -v
 // -v：テスト結果を詳細に表示する
