@@ -7,7 +7,7 @@ acc new abc250
 ## テストの実行
 ```shell
 cd abc250
-oj t -c "bash -c 'g++ main.cpp -o main && ./main'" -d tests
+oj t -c "python main.py" -d tests
 ```
 
 ## 回答を提出する
@@ -17,6 +17,6 @@ acc s
 
 ## 問題の追加
 ```shell
-cd abc250
+cd ..
 acc a
 ```
