@@ -1,4 +1,4 @@
 FROM jupyter/base-notebook:x86_64-ubuntu-22.04
 
 # 必要に応じて追加パッケージをインストール
-RUN pip install numpy pandas matplotlib
+RUN pip install numpy pandas matplotlib seaborn
