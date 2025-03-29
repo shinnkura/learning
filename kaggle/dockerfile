@@ -1,0 +1,14 @@
+FROM gcr.io/kaggle-gpu-images/python:latest
+
+# Kaggle CLI用APIキーを配置
+COPY kaggle.json /root/.kaggle/kaggle.json
+RUN chmod 600 /root/.kaggle/kaggle.json
+
+# デフォルトディレクトリの作成
+RUN mkdir -p /kaggle/input /kaggle/working
+
+# 作業ディレクトリを設定
+WORKDIR /kaggle/working
+
+# Jupyterを起動できるようにポートを空けておく
+EXPOSE 8888

@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  kaggle:
+    platform: linux/amd64
+    build: .
+    container_name: kaggle
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./working:/kaggle/working
+      - ./input:/kaggle/input
+    tty: true
+    stdin_open: true
+    command: /bin/bash
