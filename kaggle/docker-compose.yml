@@ -12,4 +12,3 @@ services:
       - ./input:/kaggle/input
     tty: true
     stdin_open: true
-    command: /bin/bash

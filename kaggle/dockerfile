@@ -4,6 +4,14 @@ FROM gcr.io/kaggle-gpu-images/python:latest
 COPY kaggle.json /root/.kaggle/kaggle.json
 RUN chmod 600 /root/.kaggle/kaggle.json
 
+# requirements.txt のコピーとインストール
+COPY requirements.txt /kaggle/requirements.txt
+RUN pip install --no-cache-dir -r /kaggle/requirements.txt
+
+# Jupyter用のカーネルをインストール
+RUN pip install ipykernel
+RUN python -m ipykernel install --user --name kaggle-env --display-name "Python (Kaggle)"
+
 # デフォルトディレクトリの作成
 RUN mkdir -p /kaggle/input /kaggle/working
 
@@ -12,3 +20,6 @@ WORKDIR /kaggle/working
 
 # Jupyterを起動できるようにポートを空けておく
 EXPOSE 8888
+
+# 起動時にJupyterを自動起動
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]
