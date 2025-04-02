@@ -58,5 +58,7 @@
     "unordered_set": "cpp",
     "variant": "cpp",
     "algorithm": "cpp"
-  }
+  },
+  "notebook.output.textLineLimit": 30,
+  "notebook.output.scrolling": true
 }
