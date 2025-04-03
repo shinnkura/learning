@@ -1,0 +1,15 @@
+{
+  "id": "shinnkura/advanced_regression_techniques",
+  "title": "advanced_regression_techniques",
+  "code_file": "advanced_regression_techniques.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

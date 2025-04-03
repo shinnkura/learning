@@ -34,3 +34,11 @@ kaggle competitions submissions -c <コンペ名>
 ```shell
 kaggle kernels pull <username>/<notebook-name>
 ```
+
+## ノートブックを提出
+```shell
+kaggle kernels init
+
+# 生成されたファイルを修正後、以下のコマンドを実行
+kaggle kernels push -p .
+```
