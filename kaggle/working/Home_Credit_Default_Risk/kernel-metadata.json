@@ -1,0 +1,15 @@
+{
+  "id": "shinnkura/home_credit_default_risk",
+  "title": "Home Credit Default Risk",
+  "code_file": "lgm.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
