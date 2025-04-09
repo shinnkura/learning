@@ -11,3 +11,6 @@ kaggle/kaggle.json
 
 # VSCode
 .virtual_documents/
+
+# Python
+*.pickle
