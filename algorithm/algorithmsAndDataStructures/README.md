@@ -1,19 +1,5 @@
-# 2 章　計算量とオーダー記法
-
-- [code 2.4：最近点対問題に対する全探索](https://github.com/drken1215/book_algorithm_solution/blob/master/codes/chap02/code_2_4.cpp)
-
-
-
-　
-
 # 3 章　設計技法(1)：全探索
-
-- [code 3.1：線形探索法](https://github.com/drken1215/book_algorithm_solution/blob/master/codes/chap03/code_3_1.cpp)
-- [code 3.2：特定の要素の存在する「添字」も取得する](https://github.com/drken1215/book_algorithm_solution/blob/master/codes/chap03/code_3_2.cpp)
-- [code 3.3：最小値を求める](https://github.com/drken1215/book_algorithm_solution/blob/master/codes/chap03/code_3_3.cpp) 
 - [code 3.6：部分和問題に対するビットを用いる全探索解法](https://github.com/drken1215/book_algorithm_solution/blob/master/codes/chap03/code_3_6.cpp)
-
-
 
 　
 
