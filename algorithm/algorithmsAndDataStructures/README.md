@@ -1,8 +1,5 @@
 # 2 章　計算量とオーダー記法
 
-- [code 2.1：一重の for 文 (O(N))](https://github.com/drken1215/book_algorithm_solution/blob/master/codes/chap02/code_2_1.cpp)
-- [code 2.2：二重の for 文 (O(N^2))](https://github.com/drken1215/book_algorithm_solution/blob/master/codes/chap02/code_2_2.cpp)
-- [code 2.3：偶数の列挙](https://github.com/drken1215/book_algorithm_solution/blob/master/codes/chap02/code_2_3.cpp)
 - [code 2.4：最近点対問題に対する全探索](https://github.com/drken1215/book_algorithm_solution/blob/master/codes/chap02/code_2_4.cpp)
 
 
