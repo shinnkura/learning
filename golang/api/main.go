@@ -16,14 +16,14 @@ func main() {
 
 	db, err := sql.Open("mysql", dbConn)
 	if err != nil {
-		fmt.Println("Error opening database:", err)
+		fmt.Println(err)
 	}
 	defer db.Close()
 
 	const sqlStr = `
-	select * from articles
+		select *
+		from articles;
 	`
-
 	rows, err := db.Query(sqlStr)
 	if err != nil {
 		fmt.Println(err)
@@ -35,7 +35,8 @@ func main() {
 	for rows.Next() {
 		var article models.Article
 		var createdTime sql.NullTime
-		err := rows.Scan(&article.ID, &article.Title, &article.Contents, &article.UserName, &article.NiceNum, &article.CommentList, &createdTime)
+		// Scanは単一の値を返す（CommentListはスライスなので返せない）
+		err := rows.Scan(&article.ID, &article.Title, &article.Contents, &article.UserName, &article.NiceNum, &createdTime)
 
 		if createdTime.Valid {
 			article.CreatedAt = createdTime.Time
@@ -49,5 +50,4 @@ func main() {
 	}
 
 	fmt.Printf("%+v\n", articleArray)
-
 }
