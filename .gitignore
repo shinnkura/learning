@@ -15,3 +15,5 @@ kaggle/kaggle.json
 # Python
 *.pickle
 *.csv
+
+.env
