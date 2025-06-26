@@ -196,8 +196,75 @@ path := filepath.Join("data", "files", "file.txt")
 
 関連：path との違い
 
-- **path** パッケージ：常に / を使う → URLなどの処理向け
-- **path/filepath** パッケージ：OSに応じて \ や / を使う → ファイルパス向け
+- **path** パッケージ：常に / を使う → URL などの処理向け
+- **path/filepath** パッケージ：OS に応じて \ や / を使う → ファイルパス向け
 
 ---
 
+defer を積極的に使う
+
+utf-8 を積極的に使う
+
+termbox を使用すれば、簡単に TUI アプリケーションを作れる
+※go-colorable: windows でも ANSI カラーシーケンス（色付き文字）を正しく表示できるようにするための Go ライブラリ
+
+---
+
+## OS 固有の処理をかける
+
+runtime.GOOS を使うことで、OS 固有の処理をかける
+
+```go
+var cmd exec.Cmd
+if runtime.GOOS == "windows" {
+	cmd = exec.Command("cmd", "/c", "echo", "Hello, World!")
+} else {
+	cmd = exec.Command("echo", "Hello, World!")
+}
+err :=cmd.Run()
+if err != nil {
+	log.Fatal(err)
+}
+```
+
+ビルド時に指定したい場合、Build Constraints を使う
+・ファイル名による指定
+・+buildコメントによる指定
+
+
+pkg-configを使って、複雑なコンパイルオプションに対処
+
+---
+
+## goはシングルバイナリ
+`github.com/rakyll/statik`：静的ファイル（HTML, CSS, JS など）を Go バイナリに埋め込むためのツール＆ライブラリ
+※ packerも静的ファイルを埋め込むためのツール
+
+---
+
+## 効率的なIO処理
+stretcher:大量のサーバーに効率よくアプリケーションを展開するために設計
+
+---
+乱数
+math/rand, crypto/rand
+
+---
+go-humanize: 人間が扱いやすい形式の数値に変換
+
+---
+外部コマンドの使用
+os/exec
+
+---
+シグナル：　OSが外部から割り込みを与えるための機構
+| シグナル名                | 説明                            |
+| -------------------- | ----------------------------- |
+| `SIGINT`             | Ctrl+C によって送られる。中断（Interrupt） |
+| `SIGTERM`            | `kill` コマンドで送られる。終了要求         |
+| `SIGHUP`             | 端末切断・再起動時に送られる（設定再読込に使われることも） |
+| `SIGKILL`            | 強制終了（キャッチ不可）                  |
+| `SIGUSR1`, `SIGUSR2` | ユーザー定義シグナル                    |
+
+
+独自のシグナルを定義することもできる
